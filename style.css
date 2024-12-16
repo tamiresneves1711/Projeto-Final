@@ -66,11 +66,13 @@ nav ul li a:hover {
     color: #e6e6e6;
 }
 
+/* Modificando a galeria para usar grid */
 .galeria {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas */
     gap: 20px;
-    justify-content: center;
+    justify-items: center;
+    grid-template-rows: auto;
 }
 
 .praia {
@@ -79,7 +81,8 @@ nav ul li a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     text-align: center;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -167,4 +170,27 @@ footer {
     color: #d4d4d4;
 }
 
+/* Responsividade: Ajustando a grid para telas menores */
+@media (max-width: 1200px) {
+    .galeria {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas médias */
+    }
+}
 
+@media (max-width: 900px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas muito pequenas */
+    }
+}
+
+@media (max-width: 400px) {
+    .galeria {
+        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+    }
+}
