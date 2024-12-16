@@ -1,9 +1,170 @@
-h1{
-    color: rgb(1, 10, 7);
-
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #0f0f0f;
+    color: #e0e0e0;
 }
 
-p{
-    font-family: 'Times New Roman', Times, serif;
-    max-width: 250px;
+header {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    color: #a6c0fe;
+    transform: scale(1.1);
+}
+
+.banner {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(14, 20, 40, 0.8), rgba(14, 20, 40, 0.8)), url('banner.jpg') no-repeat center center/cover;
+    color: #fff;
+    font-size: 22px;
+}
+
+.praias {
+    padding: 20px;
+    background: linear-gradient(to bottom, #212121, #323232);
+    color: #d4d4d4;
+}
+
+.praias h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e6e6e6;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.praia {
+    background: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.praia:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.praia img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 3px solid #323232;
+}
+
+.praia h3 {
+    margin: 15px 0 10px;
+    color: #66fcf1;
+}
+
+.praia p {
+    padding: 0 15px 15px;
+    font-size: 14px;
+    color: #c5c6c7;
+}
+
+.sobre, .contato {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #1b1b1b, #2b2b2b);
+    color: #e0e0e0;
+}
+
+.sobre h2, .contato h2 {
+    color: #45a29e;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #4b4b4b;
+    border-radius: 8px;
+    background: #1c1c1c;
+    color: #d4d4d4;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #66fcf1;
+    outline: none;
+    box-shadow: 0 0 5px #66fcf1;
+}
+
+form button {
+    background: linear-gradient(90deg, #1f4037, #99f2c8);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+form button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #162c26, #66fcf1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+    color: #d4d4d4;
+}
+
+
