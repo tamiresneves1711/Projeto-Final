@@ -6,26 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turismo no Rio de Janeiro - Praias</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+    </style>
+    <script>
+        function toggleLanguage() {
+            const currentLang = document.documentElement.lang === 'pt-BR' ? 'en' : 'pt-BR';
+            document.documentElement.lang = currentLang;
+
+            document.querySelectorAll('[data-lang-pt]').forEach(el => {
+                el.textContent = currentLang === 'pt-BR' ? el.getAttribute('data-lang-pt') : el.getAttribute('data-lang-en');
+            });
+
+            document.getElementById('translateButton').textContent = currentLang === 'pt-BR' ? 'Traduzir para Inglês' : 'Translate to Portuguese';
+        }
+    </script>
 </head>
 
 <body>
     <header>
+        
         <div class="logo">
-            <h1>Praias do Rio de Janeiro</h1>
+            <h1 data-lang-pt="Agência de Turismo Ferreira" data-lang-en="Ferreira Tourism Agency">Agência de Turismo Ferreira</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#praias">Praias</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#home" data-lang-pt="Home" data-lang-en="Home">Home</a></li>
+                <li><a href="#praias" data-lang-pt="Praias" data-lang-en="Beaches">Praias</a></li>
+                <li><a href="#sobre" data-lang-pt="Sobre" data-lang-en="About">Sobre</a></li>
+                <li><a href="#contato" data-lang-pt="Contato" data-lang-en="Contact">Contato</a></li>
             </ul>
         </nav>
     </header>
 
+    <button id="translateButton" onclick="toggleLanguage()">Traduzir para Inglês</button>
+
     <section id="home" class="banner">
-        <h2>Bem-vindo ao paraíso!</h2>
-        <p>Descubra as praias mais lindas do Rio de Janeiro.</p>
+        <h2 data-lang-pt="Bem-vindo ao paraíso!" data-lang-en="Welcome to paradise!">Bem-vindo ao paraíso!</h2>
+        <p data-lang-pt="Descubra as praias mais lindas do Rio de Janeiro." data-lang-en="Discover the most beautiful beaches in Rio de Janeiro.">
+            Descubra as praias mais lindas do Rio de Janeiro.
+        </p>
     </section>
 
     <section id="praias" class="praias">
@@ -34,54 +54,108 @@
             <div class="praia">
                 <img src="imagens/Orla da Zona Sul do Rio de Janeiro.jpg" alt="Orla da Zona Sul">
                 <h3>Orla da Zona Sul</h3>
-                <p>A Orla da Zona Sul do Rio de Janeiro é famosa mundialmente...</p>
+                <p data-lang-pt="A Orla da Zona Sul do Rio de Janeiro é famosa mundialmente por suas praias deslumbrantes, como Copacabana, Ipanema e Leblon. Com águas claras, areias douradas e uma vista espetacular, é um destino icônico que mistura beleza natural e infraestrutura vibrante."
+                    data-lang-en="The Southern Zone coast of Rio de Janeiro is world-famous for its stunning beaches, such as Copacabana, Ipanema, and Leblon. With clear waters, golden sands, and spectacular views, it is an iconic destination that blends natural beauty with vibrant infrastructure.">
+                    A Orla da Zona Sul do Rio de Janeiro é famosa mundialmente por suas praias deslumbrantes, como
+                    Copacabana, Ipanema e Leblon. Com águas claras, areias douradas e uma vista espetacular, é um
+                    destino icônico que mistura beleza natural e infraestrutura vibrante.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
             <div class="praia">
                 <img src="imagens/Praia de Copacabana.webp" alt="Praia de Copacabana">
                 <h3>Copacabana</h3>
-                <p>A Praia de Copacabana, mundialmente conhecida...</p>
+                <p data-lang-pt="A Praia de Copacabana, mundialmente conhecida por sua beleza e pelos icônicos fogos de Réveillon, é um dos maiores cartões-postais do Rio de Janeiro. Em sua orla, destaca-se a Estátua de Vinicius de Moraes, imortalizando o poeta e compositor da música popular brasileira."
+                   data-lang-en="Copacabana Beach, world-renowned for its beauty and iconic New Year's Eve fireworks, is one of Rio de Janeiro's most famous landmarks. Along its coastline, the statue of Vinicius de Moraes stands out, immortalizing the poet and composer of Brazilian popular music.">
+                   A Praia de Copacabana, mundialmente conhecida por sua beleza e pelos icônicos fogos de Réveillon, é um dos maiores cartões-postais do Rio de Janeiro. Em sua orla, destaca-se a Estátua de Vinicius de Moraes, imortalizando o poeta e compositor da música popular brasileira.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
             <div class="praia">
                 <img src="imagens/Praia do Arpoador.jpg" alt="Praia de Arpoador">
                 <h3>Arpoador</h3>
-                <p>A Praia do Arpoador é famosa pelo incrível pôr do sol...</p>
+                <p data-lang-pt="A Praia do Arpoador é famosa pelo incrível pôr do sol, considerado um dos mais bonitos do Rio. As praias de Ipanema e Leblon, que continuam a paisagem do Arpoador, também oferecem vistas deslumbrantes, tornando o local um espetáculo natural imperdível."
+                   data-lang-en="Arpoador Beach is famous for its incredible sunset, considered one of the most beautiful in Rio. The beaches of Ipanema and Leblon, which continue the Arpoador landscape, also offer stunning views, making the location an unmissable natural spectacle.">
+                   A Praia do Arpoador é famosa pelo incrível pôr do sol, considerado um dos mais bonitos do Rio. As praias de Ipanema e Leblon, que continuam a paisagem do Arpoador, também oferecem vistas deslumbrantes, tornando o local um espetáculo natural imperdível.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
+            
             <div class="praia">
                 <img src="imagens/Praia da joatinga.jpg" alt="Praia da Joatinga">
                 <h3>Joatinga</h3>
-                <p>A Praia da Joatinga está situada entre a Barra...</p>
+                <p data-lang-pt="A Praia da Joatinga está situada entre a Barra da Tijuca e São Conrado, localizada no bairro do Joá e escondida. Como é uma praia mais isolada e de difícil acesso, vários artistas também costumam circular por ali. É uma praia exclusiva mesmo, ótima para quem quer um pouco de privacidade e segurança."
+                   data-lang-en="Joatinga Beach is located between Barra da Tijuca and São Conrado, in the secluded Joá neighborhood. As it is a more isolated and hard-to-reach beach, many artists often visit the area. It is truly an exclusive beach, ideal for those seeking a bit of privacy and safety.">
+                   A Praia da Joatinga está situada entre a Barra da Tijuca e São Conrado, localizada no bairro do Joá e escondida. Como é uma praia mais isolada e de difícil acesso, vários artistas também costumam circular por ali. É uma praia exclusiva mesmo, ótima para quem quer um pouco de privacidade e segurança.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
+            
             <div class="praia">
                 <img src="imagens/praia-do-secreto.jpg" alt="Praia do Secreto">
                 <h3>Secreto</h3>
-                <p>A Praia do Secreto, no Rio de Janeiro...</p>
+                <p data-lang-pt="A Praia do Secreto, no Rio de Janeiro, é uma piscina natural que surge na maré baixa, oferecendo uma vista incrível do litoral. O acesso é desafiador, exigindo descida por rochas, e depende da tábua de marés."
+                   data-lang-en="Secreto Beach, in Rio de Janeiro, is a natural pool that appears at low tide, offering an incredible view of the coastline. Access is challenging, requiring a descent over rocks, and depends on the tide chart.">
+                   A Praia do Secreto, no Rio de Janeiro, é uma piscina natural que surge na maré baixa, oferecendo uma vista incrível do litoral. O acesso é desafiador, exigindo descida por rochas, e depende da tábua de marés.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
+            
 
             <div class="praia">
                 <img src="imagens/Ilhas Tijucas.jpg" alt="Ilhas Tijucas">
                 <h3>Ilhas Tijucas</h3>
-                <p>As Ilhas Tijucas, no Rio de Janeiro...</p>
+                <p data-lang-pt="As Ilhas Tijucas, no Rio de Janeiro, são um destino perfeito para quem busca beleza natural e tranquilidade, com águas cristalinas e rica fauna marinha. Ideal para passeios de barco e mergulho, oferecem uma experiência única em meio à Baía de Guanabara."
+                   data-lang-en="The Tijucas Islands, in Rio de Janeiro, are a perfect destination for those seeking natural beauty and tranquility, with crystal-clear waters and rich marine life. Ideal for boat trips and diving, they offer a unique experience in the middle of Guanabara Bay.">
+                   As Ilhas Tijucas, no Rio de Janeiro, são um destino perfeito para quem busca beleza natural e tranquilidade, com águas cristalinas e rica fauna marinha. Ideal para passeios de barco e mergulho, oferecem uma experiência única em meio à Baía de Guanabara.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
             <div class="praia">
                 <img src="imagens/Ilha Grande- Lagoa Azul.jpg" alt="Lagoa Azul">
                 <h3>Lagoa Azul</h3>
-                <p>A Praia da Lagoa Azul, em Ilha Grande...</p>
+                <p data-lang-pt="A Praia da Lagoa Azul, em Ilha Grande, se destaca pela sua combinação única de águas calmas e transparentes, ideais para quem deseja explorar a vida marinha em snorkeling. Cercada por montanhas cobertas de mata atlântica, ela oferece um cenário deslumbrante, tornando-a um dos locais mais especiais da ilha."
+                   data-lang-en="Blue Lagoon Beach, in Ilha Grande, stands out for its unique combination of calm and transparent waters, perfect for those who want to explore marine life through snorkeling. Surrounded by mountains covered in Atlantic Forest, it offers a stunning landscape, making it one of the most special places on the island.">
+                   A Praia da Lagoa Azul, em Ilha Grande, se destaca pela sua combinação única de águas calmas e transparentes, ideais para quem deseja explorar a vida marinha em snorkeling. Cercada por montanhas cobertas de mata atlântica, ela oferece um cenário deslumbrante, tornando-a um dos locais mais especiais da ilha.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
             <div class="praia">
                 <img src="imagens/Arraial do Cabo- Prainhas do Pontal do Atalaia.jpg" alt="Pontal do Atalaia">
                 <h3>Pontal do Atalaia</h3>
-                <p>A Praia do Pontal do Atalaia é famosa...</p>
+                <p data-lang-pt="A Praia do Pontal do Atalaia é famosa por suas águas calmas e transparentes, ideais para mergulho e contemplação. O acesso por escadas íngremes e a tranquilidade do local, cercado por um cenário natural intocado, a tornam um destino imperdível para quem busca paz e beleza em Arraial do Cabo."
+                   data-lang-en="Pontal do Atalaia Beach is famous for its calm and transparent waters, ideal for diving and contemplation. The access via steep stairs and the tranquility of the place, surrounded by an untouched natural setting, make it a must-visit destination for those seeking peace and beauty in Arraial do Cabo.">
+                   A Praia do Pontal do Atalaia é famosa por suas águas calmas e transparentes, ideais para mergulho e contemplação. O acesso por escadas íngremes e a tranquilidade do local, cercado por um cenário natural intocado, a tornam um destino imperdível para quem busca paz e beleza em Arraial do Cabo.
+                </p>
+                <button onclick="translateParagraph(this)">Translate</button>
             </div>
-            <div class="praia">
-                <img src="imagens/Búzios- Praia da Ferradurinha.jpg" alt="Ferradurinha">
-                <h3>Ferradurinha</h3>
-                <p>A Praia Ferradurinha encanta por sua beleza...</p>
-            </div>
-            <div class="praia">
-                <img src="imagens/Cabo Frio-Ilha do Japones.jpg" alt="Ilha do Japones">
-                <h3>Ilha do Japones</h3>
-                <p>A Ilha do Japonês, em Arraial do Cabo...</p>
-            </div>
+<script>
+    function translateParagraph(button) {
+        const paragraph = button.previousElementSibling;
+        const isPortuguese = paragraph.textContent === paragraph.getAttribute("data-lang-pt");
+        paragraph.textContent = isPortuguese ? paragraph.getAttribute("data-lang-en") : paragraph.getAttribute("data-lang-pt");
+    }
+</script>
+
+<div class="praia">
+    <img src="imagens/Búzios- Praia da Ferradurinha.jpg" alt="Ferradurinha">
+    <h3>Ferradurinha</h3>
+    <p data-lang-pt="A Praia Ferradurinha encanta por sua beleza paradisíaca, com águas cristalinas, e um cenário natural intocado, rodeado por montanhas e vegetação exuberante. A localização privilegiada em Búzios, um destino turístico de alto padrão, e o acesso mais restrito à praia, tornam a região mais cara, refletindo na exclusividade e no ambiente sofisticado que atrai visitantes em busca de tranquilidade e luxo."
+       data-lang-en="Ferradurinha Beach charms with its paradisiacal beauty, crystal-clear waters, and an untouched natural setting, surrounded by mountains and lush vegetation. Its privileged location in Búzios, a high-end tourist destination, and more restricted access to the beach make the area more expensive, reflecting its exclusivity and sophisticated environment that attracts visitors seeking tranquility and luxury.">
+       A Praia Ferradurinha encanta por sua beleza paradisíaca, com águas cristalinas, e um cenário natural intocado, rodeado por montanhas e vegetação exuberante. A localização privilegiada em Búzios, um destino turístico de alto padrão, e o acesso mais restrito à praia, tornam a região mais cara, refletindo na exclusividade e no ambiente sofisticado que atrai visitantes em busca de tranquilidade e luxo.
+    </p>
+    <button onclick="translateParagraph(this)">Translate</button>
+</div>
+
+<div class="praia">
+    <img src="imagens/Cabo Frio-Ilha do Japones.jpg" alt="Ilha do Japones">
+    <h3>Ilha do Japonês</h3>
+    <p data-lang-pt="A Ilha do Japonês, em Arraial do Cabo, é um pequeno paraíso cercado por águas azuis e cristalinas, perfeitas para quem busca um refúgio tranquilo. Com acesso por barco, a ilha oferece um cenário único, com suas praias isoladas, ricos corais e uma atmosfera serena, ideal para quem deseja escapar da agitação e se conectar com a natureza em sua forma mais pura."
+       data-lang-en="The Japanese Island, in Arraial do Cabo, is a small paradise surrounded by blue, crystal-clear waters, perfect for those seeking a tranquil refuge. Accessible by boat, the island offers a unique setting with its isolated beaches, rich coral reefs, and a serene atmosphere, ideal for those looking to escape the hustle and connect with nature in its purest form.">
+       A Ilha do Japonês, em Arraial do Cabo, é um pequeno paraíso cercado por águas azuis e cristalinas, perfeitas para quem busca um refúgio tranquilo. Com acesso por barco, a ilha oferece um cenário único, com suas praias isoladas, ricos corais e uma atmosfera serena, ideal para quem deseja escapar da agitação e se conectar com a natureza em sua forma mais pura.
+    </p>
+    <button onclick="translateParagraph(this)">Translate</button>
+</div>
         </div>
     </section>
 
@@ -109,6 +183,7 @@
     <footer>
         <p>&copy; 2024 Praias do Rio. Todos os direitos reservados.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>

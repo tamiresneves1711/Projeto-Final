@@ -29,3 +29,17 @@ contatoForm.addEventListener('submit', function(event) {
     // Aqui você pode adicionar lógica para enviar os dados do formulário via AJAX, se necessário
     contatoForm.reset();
 });
+
+function translateParagraph(button) {
+    const paragraph = button.previousElementSibling; // Encontra o parágrafo acima do botão
+    const currentLang = document.documentElement.lang === 'pt-BR' ? 'en' : 'pt-BR'; // Determina o idioma atual
+    document.documentElement.lang = currentLang; // Atualiza o atributo de idioma global
+
+    // Alterna o texto entre português e inglês
+    paragraph.textContent = currentLang === 'pt-BR' 
+        ? paragraph.getAttribute('data-lang-pt') 
+        : paragraph.getAttribute('data-lang-en');
+
+    // Atualiza o texto do botão
+    button.textContent = currentLang === 'pt-BR' ? 'Translate' : 'Traduzir';
+}
